@@ -21,7 +21,7 @@ const History = function({history, updateSearch, doSearch, deleteItem}) {
               <a href="javascript:;" onClick={handleClick.bind(null, term)}> {term} </a>
               <a href="javascript:;" onClick={handleDelete.bind(null, i)}
                 className="history__item-remove">
-                <icon className="material-icons md-18">highlight_off</icon>
+                <icon className="material-icons md-18">clear</icon>
               </a>
             </li>
           )

@@ -4,8 +4,7 @@
 
 .history__item {
   position: relative;
-  margin-left: -24px;
-  padding-left: 24px;
+  padding-left: 18px;
 
   &:hover {
     .history__item-remove {
@@ -15,10 +14,10 @@
 }
 
 .history__item-remove {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
+  color: #aaa;
 
-  .material-icons {font-size: 18px;}
+  .material-icons {font-size: 14px;}
 }

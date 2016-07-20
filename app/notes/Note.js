@@ -11,7 +11,7 @@ const Note = function({note, i, removeNote}) {
         <div className="panel-body note">
           <a href="javascript:;" className="note__remove"
             onClick={handleRemove}>
-            <i className="material-icons">highlight_off</i>
+            <i className="material-icons">clear</i>
           </a>
           {note}
         </div>
