@@ -1,0 +1,24 @@
+.history {
+
+}
+
+.history__item {
+  position: relative;
+  margin-left: -24px;
+  padding-left: 24px;
+
+  &:hover {
+    .history__item-remove {
+      display: inline;
+    }
+  }
+}
+
+.history__item-remove {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .material-icons {font-size: 18px;}
+}

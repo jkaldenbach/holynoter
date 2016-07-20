@@ -1,0 +1,23 @@
+.verse {
+  position: relative;
+  margin-bottom: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.verse--highlight {
+  background-color: $yellow;
+}
+
+.verse--circle {
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+
+.verse--underline {
+  border-bottom: 3px solid #333;
+
+  &.verse--circle {
+    border-bottom: 5px double #333;
+  }
+}
