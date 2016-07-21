@@ -22910,6 +22910,7 @@
 	    e.preventDefault();
 	    addToHistory(searchTerm);
 	    doSearch();
+	    e.target.blur();
 	  };
 	
 	  var handleTermChange = function handleTermChange(e) {
