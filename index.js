@@ -22352,7 +22352,6 @@
 	};
 	
 	actions.togglePopover = function (verseRef) {
-	  console.trace('popover');
 	  return {
 	    type: types.TOGGLE_POPOVER,
 	    verseRef: verseRef
@@ -23205,7 +23204,7 @@
 	      popover
 	    ),
 	    notes.map(function (note, i) {
-	      return _react2.default.createElement(_Note2.default, { key: i, note: note, removeNote: handleRemoveNote });
+	      return _react2.default.createElement(_Note2.default, { key: i, index: i, note: note, removeNote: handleRemoveNote });
 	    })
 	  );
 	};
@@ -23421,11 +23420,11 @@
 	
 	var Note = function Note(_ref) {
 	  var note = _ref.note;
-	  var i = _ref.i;
+	  var index = _ref.index;
 	  var removeNote = _ref.removeNote;
 	
 	  var handleRemove = function handleRemove() {
-	    removeNote(i);
+	    removeNote(index);
 	  };
 	
 	  return _react2.default.createElement(
@@ -23698,35 +23697,43 @@
 	    { className: 'note-form__backdrop', onClick: handleClickOutside },
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'note-form', onClick: handleClickInside },
+	      { className: 'modal-dialog' },
 	      _react2.default.createElement(
-	        'form',
-	        { name: 'newNoteForm', className: 'note-form__form' },
+	        'div',
+	        { className: 'modal-content' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'form-group' },
+	          { className: 'modal-body note-form', onClick: handleClickInside },
 	          _react2.default.createElement(
-	            'label',
-	            { 'for': 'newNote' },
-	            'Note'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'input-group' },
-	            _react2.default.createElement('textarea', { name: 'newNote', className: 'form-control', cols: '3',
-	              onChange: handleChange,
-	              autoFocus: true }),
+	            'form',
+	            { name: 'newNoteForm', className: 'note-form__form' },
 	            _react2.default.createElement(
-	              'span',
-	              { className: 'input-group-btn' },
+	              'div',
+	              { className: 'form-group' },
 	              _react2.default.createElement(
-	                'button',
-	                { type: 'submit', onClick: handleSubmit,
-	                  className: 'btn btn-fab btn-fab-mini' },
+	                'label',
+	                { 'for': 'newNote' },
+	                'Note'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'input-group' },
+	                _react2.default.createElement('textarea', { name: 'newNote', className: 'form-control', cols: '3',
+	                  onChange: handleChange,
+	                  autoFocus: true }),
 	                _react2.default.createElement(
-	                  'i',
-	                  { className: 'material-icons' },
-	                  'note_add'
+	                  'span',
+	                  { className: 'input-group-btn' },
+	                  _react2.default.createElement(
+	                    'button',
+	                    { type: 'submit', onClick: handleSubmit,
+	                      className: 'btn btn-fab btn-fab-mini' },
+	                    _react2.default.createElement(
+	                      'i',
+	                      { className: 'material-icons' },
+	                      'note_add'
+	                    )
+	                  )
 	                )
 	              )
 	            )
@@ -23738,6 +23745,27 @@
 	};
 	
 	exports.default = NoteForm;
+	/*<div className="note-form__backdrop" onClick={handleClickOutside}>
+	  <div className="note-form" onClick={handleClickInside}>
+	    <form name="newNoteForm" className="note-form__form">
+	      <div className="form-group">
+	        <label for="newNote">Note</label>
+	        <div className="input-group">
+	          <textarea name="newNote" className="form-control" cols="3"
+	            onChange={handleChange}
+	            autoFocus={true}>
+	          </textarea>
+	          <span className="input-group-btn">
+	            <button type="submit" onClick={handleSubmit}
+	              className="btn btn-fab btn-fab-mini">
+	              <i className="material-icons">note_add</i>
+	            </button>
+	          </span>
+	        </div>
+	      </div>
+	    </form>
+	  </div>
+	</div>*/
 
 /***/ },
 /* 213 */
@@ -23880,7 +23908,7 @@
 	        }
 	        return _extends({}, state, {
 	          noteRefs: updatedNoteRefs,
-	          notesByRef: _extends({}, state.notesByRef, _defineProperty({}, actions.verseRef, updatedNotesByRef))
+	          notesByRef: _extends({}, state.notesByRef, _defineProperty({}, action.verseRef, updatedNotesByRef))
 	        });
 	      }
 	
