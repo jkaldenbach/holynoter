@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js & webpack --watch & npm run watch-css",
-    "dev": "webpack-dev-server & npm run watch-css",
+    "start": "webpack-dev-server & npm run watch-css",
+    "build": "webpack && npm run build-css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path app/scss app/scss/main.scss ./main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
