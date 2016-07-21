@@ -73,7 +73,7 @@ export default function notesReducer(state = initialState, action) {
         noteRefs: updatedNoteRefs,
         notesByRef: {
           ...state.notesByRef,
-          [actions.verseRef]: updatedNotesByRef
+          [action.verseRef]: updatedNotesByRef
         }
       }
     }

@@ -13,13 +13,16 @@
     font-size: 14px; }
 
 .note {
-  display: relative; }
+  display: relative;
+  padding: 15px 0; }
 
 .note__remove {
   position: absolute;
   top: 10px;
   right: 10px;
   color: #aaa; }
+  .note__remove .material-icons {
+    font-size: 14px; }
 
 .note-form__backdrop {
   position: fixed;
@@ -29,12 +32,6 @@
   right: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 9999; }
-
-.note-form {
-  width: 450px;
-  margin: 300px auto 0;
-  background-color: #fff;
-  padding: 10px 10px 10px 25px; }
 
 .popover {
   display: flex;

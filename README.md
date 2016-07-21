@@ -2,7 +2,7 @@
 
 A Bible app for reading a taking notes.
 
-[Demo](https://holynoter-yscsybwylb.now.sh)
+[Demo](https://jkaldenbach.github.io/holynoter/)
 
 # Install / Run
 

@@ -83,7 +83,6 @@ actions.updateText = function(text) {
 }
 
 actions.togglePopover = function(verseRef) {
-  console.trace('popover')
   return {
     type: types.TOGGLE_POPOVER,
     verseRef
