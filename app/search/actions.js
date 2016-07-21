@@ -44,11 +44,34 @@ actions.doSearch = function() {
   return function(dispatch, getState) {
     dispatch(actions.setLoading(true))
     dispatch(actions.updateText([]))
-    return fetch('rest/verses?p=' + getState().search.searchTerm)
-    .then(resp => resp.json())
-    .then(data => {
+    return jQuery.ajax({
+      url:'http://getbible.net/json',
+      dataType: 'jsonp',
+      data: 'v=nasb&p=' + getState().search.searchTerm,
+      jsonp: 'getbible'
+    })
+    .then(resp => {
+      console.log(resp)
+      let book;
+      switch (resp.type) {
+        case 'chapter':
+          book = resp
+          break
+
+        case 'verse':
+          passage = resp.book[0]
+
+        default:
+          throw resp
+      }
+      return Object.keys(book.chapter).map(verse => ({
+        ...book.chapter[verse],
+        verseRef: [resp.book_nr, resp.chapter_nr, book.chapter[verse].verse_nr].join('.')
+      }))
+    })
+    .then(passage => {
       dispatch(actions.setLoading(false))
-      dispatch(actions.updateText(data))
+      dispatch(actions.updateText(passage))
     })
   }
 }
