@@ -19,6 +19,7 @@ export default function({
     e.preventDefault()
     addToHistory(searchTerm)
     doSearch()
+    e.target.blur()
   }
 
   const handleTermChange = function(e) {
