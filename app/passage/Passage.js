@@ -6,7 +6,6 @@ import Verse from './Verse'
 
 export default class Passage extends React.Component {
   render() {
-    console.log(this.props.passage);
     const passage = this.props.passage || []
     const verseClick = this.props.verseClick
     const popoverRef = this.props.popoverRef
@@ -22,20 +21,6 @@ export default class Passage extends React.Component {
             removeNote={removeNote}
             key={key} />
         ))}
-        {/*passage.map((item, key) => {
-          if (item.tagName === 'h3') {
-            return <Heading content={item} key={key} />
-          }
-          else if (item.tagName === 'p') {
-            return <Paragraph
-              content={item}
-              popoverRef={popoverRef}
-              verseClick={verseClick}
-              formatting={formatting}
-              removeNote={removeNote}
-              key={key} />
-          }
-        })*/}
       </div>
     )
   }

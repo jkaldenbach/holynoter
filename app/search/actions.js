@@ -45,7 +45,7 @@ actions.doSearch = function() {
     dispatch(actions.setLoading(true))
     dispatch(actions.updateText([]))
     return jQuery.ajax({
-      url:'http://getbible.net/json',
+      url:'https://getbible.net/json',
       dataType: 'jsonp',
       data: 'v=nasb&p=' + getState().search.searchTerm,
       jsonp: 'getbible'
