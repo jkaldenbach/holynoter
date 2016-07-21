@@ -38,7 +38,7 @@ const Verse = function(props) {
         {popover}
       </div>
       {notes.map((note, i) => {
-        return <Note key={i} note={note} removeNote={handleRemoveNote}/>
+        return <Note key={i} index={i} note={note} removeNote={handleRemoveNote}/>
       })}
     </div>
   )

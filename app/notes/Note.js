@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Note = function({note, i, removeNote}) {
+const Note = function({note, index, removeNote}) {
   const handleRemove = function() {
-    removeNote(i)
+    removeNote(index)
   }
 
   return (
