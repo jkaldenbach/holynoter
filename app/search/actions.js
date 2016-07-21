@@ -58,10 +58,11 @@ actions.doSearch = function() {
           break
 
         case 'verse':
-          passage = resp.book[0]
+          book = resp.book[0]
+          break
 
         default:
-          throw resp
+          throw JSON.stringify(resp)
       }
       return Object.keys(book.chapter).map(verse => ({
         ...book.chapter[verse],
