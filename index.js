@@ -22320,7 +22320,6 @@
 	      data: 'v=nasb&p=' + getState().search.searchTerm,
 	      jsonp: 'getbible'
 	    }).then(function (resp) {
-	      console.log(resp);
 	      var book = void 0;
 	      switch (resp.type) {
 	        case 'chapter':
