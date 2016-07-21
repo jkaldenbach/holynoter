@@ -68,19 +68,19 @@
 	
 	var _SearchContainer2 = _interopRequireDefault(_SearchContainer);
 	
-	var _HistoryContainer = __webpack_require__(209);
+	var _HistoryContainer = __webpack_require__(208);
 	
 	var _HistoryContainer2 = _interopRequireDefault(_HistoryContainer);
 	
-	var _NoteFormContainer = __webpack_require__(211);
+	var _NoteFormContainer = __webpack_require__(210);
 	
 	var _NoteFormContainer2 = _interopRequireDefault(_NoteFormContainer);
 	
-	var _reducer = __webpack_require__(214);
+	var _reducer = __webpack_require__(213);
 	
 	var _reducer2 = _interopRequireDefault(_reducer);
 	
-	var _reducer3 = __webpack_require__(215);
+	var _reducer3 = __webpack_require__(214);
 	
 	var _reducer4 = _interopRequireDefault(_reducer3);
 	
@@ -22315,7 +22315,7 @@
 	    dispatch(actions.setLoading(true));
 	    dispatch(actions.updateText([]));
 	    return jQuery.ajax({
-	      url: 'http://getbible.net/json',
+	      url: 'https://getbible.net/json',
 	      dataType: 'jsonp',
 	      data: 'v=nasb&p=' + getState().search.searchTerm,
 	      jsonp: 'getbible'
@@ -23056,11 +23056,7 @@
 	
 	var _Heading2 = _interopRequireDefault(_Heading);
 	
-	var _Paragraph = __webpack_require__(204);
-	
-	var _Paragraph2 = _interopRequireDefault(_Paragraph);
-	
-	var _Verse = __webpack_require__(205);
+	var _Verse = __webpack_require__(204);
 	
 	var _Verse2 = _interopRequireDefault(_Verse);
 	
@@ -23084,7 +23080,6 @@
 	  _createClass(Passage, [{
 	    key: 'render',
 	    value: function render() {
-	      console.log(this.props.passage);
 	      var passage = this.props.passage || [];
 	      var verseClick = this.props.verseClick;
 	      var popoverRef = this.props.popoverRef;
@@ -23159,75 +23154,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Verse = __webpack_require__(205);
-	
-	var _Verse2 = _interopRequireDefault(_Verse);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Paragraph = function Paragraph(props) {
-	  //TODO: figure out why this doesn't always work
-	  // const verses = props.content.children.reduce((verses, item) => {
-	  //   let newVerses;
-	  //   if (item.tagName === 'sup') {
-	  //     newVerses = [...verses, {
-	  //       ref: item.attributes.id,
-	  //       verseNum: item.children[0].content,
-	  //       content: ''
-	  //     }]
-	  //   } else if (item.type === 'Text') {
-	  //     newVerses = [
-	  //       ...verses.slice(0, -1),
-	  //       {
-	  //         ...verses.slice(-1).reduce((p, c) => c, {}),
-	  //         content: item.content
-	  //       }
-	  //     ]
-	  //     // verses[verses.length-1].content = item.content
-	  //   }
-	  //   return newVerses
-	  // }, [])
-	  console.log(props.content);
-	  var verses = props.content;
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    verses.map(function (verse, key) {
-	      return _react2.default.createElement(_Verse2.default, { content: verse,
-	        popoverRef: props.popoverRef,
-	        verseClick: props.verseClick,
-	        formatting: props.formatting,
-	        removeNote: props.removeNote,
-	        key: key });
-	    })
-	  );
-	};
-	
-	Paragraph.propTypes = {
-	  content: _react.PropTypes.object
-	};
-	
-	exports.default = Paragraph;
-
-/***/ },
-/* 205 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _PopoverContainer = __webpack_require__(206);
+	var _PopoverContainer = __webpack_require__(205);
 	
 	var _PopoverContainer2 = _interopRequireDefault(_PopoverContainer);
 	
-	var _Note = __webpack_require__(208);
+	var _Note = __webpack_require__(207);
 	
 	var _Note2 = _interopRequireDefault(_Note);
 	
@@ -23287,7 +23218,7 @@
 	exports.default = Verse;
 
 /***/ },
-/* 206 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23306,7 +23237,7 @@
 	
 	var _actions4 = _interopRequireDefault(_actions3);
 	
-	var _Popover = __webpack_require__(207);
+	var _Popover = __webpack_require__(206);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
@@ -23346,7 +23277,7 @@
 	exports.default = PopoverContainer;
 
 /***/ },
-/* 207 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23474,7 +23405,7 @@
 	exports.default = Popover;
 
 /***/ },
-/* 208 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23526,7 +23457,7 @@
 	exports.default = Note;
 
 /***/ },
-/* 209 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23541,7 +23472,7 @@
 	
 	var _actions2 = _interopRequireDefault(_actions);
 	
-	var _History = __webpack_require__(210);
+	var _History = __webpack_require__(209);
 	
 	var _History2 = _interopRequireDefault(_History);
 	
@@ -23572,7 +23503,7 @@
 	exports.default = HistoryContainer;
 
 /***/ },
-/* 210 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23647,7 +23578,7 @@
 	exports.default = History;
 
 /***/ },
-/* 211 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23662,7 +23593,7 @@
 	
 	var _actions2 = _interopRequireDefault(_actions);
 	
-	var _NoteFormBox = __webpack_require__(212);
+	var _NoteFormBox = __webpack_require__(211);
 	
 	var _NoteFormBox2 = _interopRequireDefault(_NoteFormBox);
 	
@@ -23691,7 +23622,7 @@
 	exports.default = NoteFormContainer;
 
 /***/ },
-/* 212 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23704,7 +23635,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _NoteForm = __webpack_require__(213);
+	var _NoteForm = __webpack_require__(212);
 	
 	var _NoteForm2 = _interopRequireDefault(_NoteForm);
 	
@@ -23722,7 +23653,7 @@
 	exports.default = NoteFormBox;
 
 /***/ },
-/* 213 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23810,7 +23741,7 @@
 	exports.default = NoteForm;
 
 /***/ },
-/* 214 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23881,7 +23812,7 @@
 	}
 
 /***/ },
-/* 215 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 
 import Heading from './Heading'
-import Paragraph from './Paragraph'
 import Verse from './Verse'
 
 export default class Passage extends React.Component {

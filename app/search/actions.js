@@ -51,7 +51,6 @@ actions.doSearch = function() {
       jsonp: 'getbible'
     })
     .then(resp => {
-      console.log(resp)
       let book;
       switch (resp.type) {
         case 'chapter':
